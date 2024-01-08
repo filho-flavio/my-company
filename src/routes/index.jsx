@@ -8,11 +8,12 @@ import {
 import { Home } from "../pages/Home";
 import { Signin } from "../pages/Signin";
 import { Signup } from "../pages/Signup";
+import { useAuth } from "../hooks/useAuth";
 
-const PrivateRoute = ({ element }) => {
-  const signed = true;
+const PrivateRoute = ({ Element }) => {
+  const {signed} = useAuth();
 
-  return signed ? element : <Navigate to="/signin" />;
+  return signed ? <Element /> : <Navigate to="/signin" />;
 };
 
 export const RoutesApp = () => {

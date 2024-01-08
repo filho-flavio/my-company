@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 
-.container {
+.container-signup {
     width: 100vw;
     height: 100vh;
     background-image: url("../../../public/background.png");
@@ -18,7 +18,7 @@
     align-items: center;
 }
 
-.content {
+.content-signup {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -27,7 +27,7 @@
     height: 45%;
 }
 
-.box-1{
+.box-1-signup {
     text-align: center;
     letter-spacing: 1px;
     color: #fff;
@@ -37,43 +37,20 @@
     justify-content: space-between;
 }
 
-.box-1 h1 {
+.box-1-signup h1 {
     font-size: 2.5em;
 }
 
-.box-2 {
+.box-2-signup {
     display: flex;
     flex-direction: column;
+    gap: 10%;
     justify-content: space-between;
     width: 90%;
-    height: 35%;
+    height: 50%;
 }
 
-.box-3{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 90%;
-}
-
-.box-3-1 {
-    display: flex;
-    gap: 1%;
-    width: 50%;
-}
-
-
-.box-3-1 #signup {
-    color: rgb(58, 58, 190);
-    font-weight: 500;
-    letter-spacing: 0.04em;
-}
-
-.box-3-2 a {
-    color: #b1e4de;
-}
-
-.box-4 {
+.box-3-signup {
     width: 90%;
     height: 12%;
 }

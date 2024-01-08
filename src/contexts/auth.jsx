@@ -3,9 +3,7 @@ import React, { createContext, useEffect, useState } from "react";
 export const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState<{ email: string; password: string } | null>(
-    null
-  );
+  const [user, setUser] = useState();
 
   // using effect to add the user in the state
   useEffect(() => {
