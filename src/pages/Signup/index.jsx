@@ -19,7 +19,7 @@ export const Signup = () => {
             setError("All fields must be completed!");
             return;
         } else if (email !== emailConf) {
-            setError("E-mails doesn't equals!")
+            setError("E-mails doesn't equals!");
             return;
         }
 
@@ -48,9 +48,9 @@ export const Signup = () => {
 
                         <Input value={email} type={"email"} textPlaceholder={"E-mail"} onChange={(e) => [setEmail(e.target.value), setError("")]} />
 
-                        <Input value={email} type={"email"} textPlaceholder={"Confirm e-mail"} onChange={(e) => [setPassword(e.target.value), setError("")]} />
+                        <Input value={emailConf} type={"email"} textPlaceholder={"Confirm e-mail"} onChange={(e) => [setEmailConf(e.target.value), setError("")]} />
 
-                        <Input value={password} type={"password"} textPlaceholder={"Create a password"} onChange={(e) => [setEmail(e.target.value), setError("")]} />
+                        <Input value={password} type={"password"} textPlaceholder={"Create a password"} onChange={(e) => [setPassword(e.target.value), setError("")]} />
 
                     </div>
 

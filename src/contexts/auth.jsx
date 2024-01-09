@@ -2,6 +2,8 @@ import React, { createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext({});
 
+// this function returns AuthContext.Provider and their children will acess their values and functions
+// your child is a HOOK
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState();
 
@@ -26,6 +28,7 @@ export const AuthProvider = ({ children }) => {
   const signin = (email, password) => {
     const usersStorageString = localStorage.getItem("users_db");
 
+    // verifying if there is a users_db on local storage
     const usersStorage = usersStorageString
       ? JSON.parse(usersStorageString)
       : null;
@@ -37,7 +40,7 @@ export const AuthProvider = ({ children }) => {
         const token = Math.random().toString(36).substring(2);
         localStorage.setItem("user_token", JSON.stringify({ email, token }));
 
-        // set the user int the components state
+        // set the user into the components state
         setUser({ email, password });
         return;
       } else {
@@ -57,6 +60,7 @@ export const AuthProvider = ({ children }) => {
 
     const hasUser = usersStorage?.filter((user) => user.email === email);
 
+    // check if the hasUser.length is greater than zero
     if (hasUser?.length) {
       return "There is an acount with this e-mail.";
     }
@@ -80,9 +84,12 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
+    // the value will be used by hook useAuth
     <AuthContext.Provider
+    // " !!use " is a shorthand for converting 'user' to a boolean
       value={{ user, signed: !!user, signin, signup, signout }}
     >
+       {/* {children} allows the child's AuthContext to acess the provided context 'value' */}
       {children}
     </AuthContext.Provider>
   );

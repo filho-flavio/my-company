@@ -11,17 +11,21 @@ export const Signin = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // if there is some error it should appear on display, the state will update it
   const [error, setError] = useState("");
 
   const handleLogin = () => {
+    // check if email and password are not empty
     if (!email | !password) {
       setError("All fields must be completed!");
       return;
     }
 
-    const res = signin(email, senha);
+    // send request to server with user's data
+    const res = signin(email, password);
 
     if (res) {
+      // if it returns something, so print the error
       setError(res);
       return;
     }
