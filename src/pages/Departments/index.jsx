@@ -1,10 +1,11 @@
 import React from "react";
 import "./index.css"
 
-export const Home = () => {
+export const Departments = () => {
+
     return (
         <>
-            <h1 className="home">Home</h1>
+            <h1>Departments</h1>
         </>
     )
 }

@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
+import { Departments } from "../pages/Departments";
 
 export const AuthContext = createContext({});
 
@@ -87,7 +88,7 @@ export const AuthProvider = ({ children }) => {
     // the value will be used by hook useAuth
     <AuthContext.Provider
     // " !!use " is a shorthand for converting 'user' to a boolean
-      value={{ user, signed: !!user, signin, signup, signout }}
+      value={{ user, signed: !!user, signin, signup, signout, Departments }}
     >
        {/* {children} allows the child's AuthContext to acess the provided context 'value' */}
       {children}
