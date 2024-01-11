@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import { Departments } from "../pages/Departments";
+import Departments from "../pages/Departments";
 import { Users } from "../pages/Users";
 
 export const AuthContext = createContext({});
@@ -7,8 +7,6 @@ export const AuthContext = createContext({});
 // this function returns AuthContext.Provider and their children will acess their values and functions
 // your child is a HOOK
 export const AuthProvider = ({ children }) => {
-
-  const departments = Departments;
 
   const [user, setUser] = useState();
 

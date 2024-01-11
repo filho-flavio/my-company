@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate, Link } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
-import { IoClose, IoExitOutline, IoMenu, IoGrid, IoPeopleSharp, IoCalendarOutline, IoAnalytics, IoHome } from "react-icons/io5";
+import { IoClose, IoExitOutline, IoMenu, IoPodium, IoPeopleSharp, IoCalendarOutline, IoAnalytics, IoHome } from "react-icons/io5";
 import "./Sidebar.css"
 
 export const Sidebar = () => {
@@ -14,6 +14,7 @@ export const Sidebar = () => {
 
                     <div className="close-sidebar">
                         <IoClose className="btn-close" />
+                        <h1 className="title-sidebar">My Company</h1>
                     </div>
 
                     <div className="options-sidebar">
@@ -23,7 +24,7 @@ export const Sidebar = () => {
                                 <Link className="links-sidebar" to={'/home'}>Home</Link>
                             </li>
                             <li className="item-sidebar">
-                                <IoGrid />
+                                <IoPodium />
                                 <Link className="links-sidebar" to={'/departments'}>Departments</Link>
                             </li>
                             <li className="item-sidebar">

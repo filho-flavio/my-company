@@ -5,7 +5,7 @@ import { Input } from "../../components/Input/Input";
 import { Button } from "../../components/Button/Button";
 import { Link, useNavigate } from 'react-router-dom';
 
-export const Signup = () => {
+export default function Signup () {
     const [email, setEmail] = useState("");
     const [emailConf, setEmailConf] = useState("");
     const [password, setPassword] = useState("");
