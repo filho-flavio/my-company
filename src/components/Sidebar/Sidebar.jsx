@@ -1,34 +1,50 @@
 import React from "react";
 import { Navigate, Link } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
+import { IoClose, IoExitOutline, IoMenu, IoGrid, IoPeopleSharp, IoCalendarOutline, IoAnalytics, IoHome } from "react-icons/io5";
 import "./Sidebar.css"
 
 export const Sidebar = () => {
+    const { signout } = useAuth();
+
     return (
         <>
             <div className="container-sidebar">
                 <div className="content-sidebar">
+
                     <div className="close-sidebar">
-                        <button></button>
+                        <IoClose className="btn-close" />
                     </div>
+
                     <div className="options-sidebar">
                         <ul className="itens-sidebar">
                             <li className="item-sidebar">
-                                <Link to={'/home'}>Home</Link>
+                                <IoHome />
+                                <Link className="links-sidebar" to={'/home'}>Home</Link>
                             </li>
                             <li className="item-sidebar">
-                                <Link to={'/departments'}>Departments</Link>
+                                <IoGrid />
+                                <Link className="links-sidebar" to={'/departments'}>Departments</Link>
                             </li>
                             <li className="item-sidebar">
-                                <Link to={'/users'}>Users</Link>
+                                <IoPeopleSharp />
+                                <Link className="links-sidebar" to={'/users'}>Users</Link>
                             </li>
                             <li className="item-sidebar">
-                                <Link to={'/calendar'}>Calendar</Link>
+                                <IoAnalytics />
+                                <Link className="links-sidebar" to={'/statistics'}>Statistics</Link>
                             </li>
                             <li className="item-sidebar">
-                                <Link to={'/statistics'}>Statistics</Link>
+                                <IoCalendarOutline />
+                                <Link className="links-sidebar" to={'/calendar'}>Calendar</Link>
                             </li>
                         </ul>
                     </div>
+
+                    <div className="log-out-sidebar">
+                        <IoExitOutline className="btn-signout" onClick={signout} />
+                    </div>
+
                 </div>
             </div>
         </>

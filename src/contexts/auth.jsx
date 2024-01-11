@@ -1,11 +1,15 @@
 import React, { createContext, useEffect, useState } from "react";
 import { Departments } from "../pages/Departments";
+import { Users } from "../pages/Users";
 
 export const AuthContext = createContext({});
 
 // this function returns AuthContext.Provider and their children will acess their values and functions
 // your child is a HOOK
 export const AuthProvider = ({ children }) => {
+
+  const departments = Departments;
+
   const [user, setUser] = useState();
 
   // using effect to add the user in the state
@@ -87,10 +91,10 @@ export const AuthProvider = ({ children }) => {
   return (
     // the value will be used by hook useAuth
     <AuthContext.Provider
-    // " !!use " is a shorthand for converting 'user' to a boolean
-      value={{ user, signed: !!user, signin, signup, signout, Departments }}
+      // " !!use " is a shorthand for converting 'user' to a boolean
+      value={{ user, signed: !!user, signin, signup, signout, Departments, Users }}
     >
-       {/* {children} allows the child's AuthContext to acess the provided context 'value' */}
+      {/* {children} allows the child's AuthContext to acess the provided context 'value' */}
       {children}
     </AuthContext.Provider>
   );

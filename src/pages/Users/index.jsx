@@ -1,5 +1,5 @@
 import React from "react";
-import "./Users.css"
+import "./index.css"
 
 export const Users = () => {
     return (

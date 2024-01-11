@@ -9,6 +9,7 @@ import { Home } from "../pages/Home";
 import { Signin } from "../pages/Signin";
 import { Signup } from "../pages/Signup";
 import { Departments } from "../pages/Departments";
+import { Users } from "../pages/Users"
 import { useAuth } from "../hooks/useAuth";
 
 const PrivateRoute = ({ Item }) => {
@@ -27,6 +28,7 @@ export const RoutesApp = () => {
             <Route path="/" element={Signin} />
             <Route path="/signup" element={Signup} />
             <Route path="/departments" element={Departments} />
+            <Route path="/users" element={Users} />
             {/* Private Route */}
             <Route path="/home" element={<PrivateRoute Item={Home} />} />
             <Route path="*" element={<Navigate to="/signin" />} />

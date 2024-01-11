@@ -1,10 +1,13 @@
 import React from "react";
 import "./index.css"
+import { Sidebar } from "../../components/Sidebar/Sidebar"
 
 export const Home = () => {
     return (
         <>
-            <h1 className="home">Home</h1>
+            <div className="home">
+                <Sidebar />
+            </div>
         </>
     )
 }
