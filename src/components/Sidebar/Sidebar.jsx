@@ -4,7 +4,17 @@ import { useAuth } from "../../hooks/useAuth";
 import { IoClose, IoExitOutline, IoMenu, IoPodium, IoPeopleSharp, IoCalendarOutline, IoAnalytics, IoHome } from "react-icons/io5";
 import "./Sidebar.css"
 
-export const Sidebar = () => {
+export const OpenSidebar = ({openSidebar}) => {
+    return (
+        <>
+            <div className="menu-sidebar">
+                <IoMenu id="btn-open-sidebar" onClick={openSidebar} className="menu-icon" />
+            </div>
+        </>
+    )
+}
+
+export const Sidebar = ({closeSidebar}) => {
     const { signout } = useAuth();
 
     return (
@@ -13,7 +23,7 @@ export const Sidebar = () => {
                 <div className="content-sidebar">
 
                     <div className="close-sidebar">
-                        <IoClose className="btn-close" />
+                        <IoClose id="btn-close-sidebar" onClick={closeSidebar} className="btn-close" />
                         <h1 className="title-sidebar">My Company</h1>
                     </div>
 

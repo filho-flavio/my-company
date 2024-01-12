@@ -90,7 +90,7 @@ export const AuthProvider = ({ children }) => {
     // the value will be used by hook useAuth
     <AuthContext.Provider
       // " !!use " is a shorthand for converting 'user' to a boolean
-      value={{ user, signed: !!user, signin, signup, signout, Departments, Users }}
+      value={{ user, signed: !!user, signin, signup, signout }}
     >
       {/* {children} allows the child's AuthContext to acess the provided context 'value' */}
       {children}

@@ -1,5 +1,47 @@
-.home {
+.container-home {
     color: #000;
     background-color: #e4e9f7;
     height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.main-home {
+    display: flex;
+    flex-flow: column wrap;
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    gap: 5%;
+}
+
+.header-home {
+    display: flex;
+    height: 10%;
+    width: 100%;
+    margin-top: 2em;
+    outline: 1px solid #000;
+}
+
+.title-pages {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.content-home-manage {
+    width: 100%;
+    height: 80%;
+    outline: 1px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hidden {
+    display: none;
+}
+
+.content-home-menu {
+    width: 3em;
+    height: 3em;
 }
