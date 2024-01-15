@@ -1,6 +1,6 @@
 .container-home {
     color: #000;
-    background-color: #e4e9f7;
+    background-color: #597ee4;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -10,7 +10,7 @@
     display: flex;
     flex-flow: column wrap;
     width: 80%;
-    height: 80%;
+    max-height: 100%;
     margin: 0 auto;
     gap: 5%;
 }
@@ -29,12 +29,19 @@
 
 .content-home-manage {
     width: 100%;
-    height: 80%;
-    outline: 1px solid #000;
+    height: 55%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
     flex-wrap: wrap;
+}
+
+.content-home-departments {
+    width: 100%;
+    height: 35%;
+    background-color: #e4e9f7;
+    border-radius: 0.8em;
+    display: flex;
 }
 
 .hidden {
@@ -44,4 +51,12 @@
 .content-home-menu {
     width: 3em;
     height: 3em;
+}
+
+@media screen and (max-width: 800px) {
+    .content-home-manage {
+        gap: 4%;
+        padding: 1em;
+    }
+
 }

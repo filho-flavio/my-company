@@ -2,9 +2,10 @@ import React from "react";
 import "./CardTasks.css";
 import { MdOutlineLock } from "react-icons/md";
 import { GoPlusCircle } from "react-icons/go";
-import profileImage from "../../../public/profile.png"
+import profileImage from "../../../public/profile.png";
+import { Tasks } from "../Tasks/Tasks";
 
-export default function CardTasks() {
+export default function CardTasks({ addTask, inputActive }) {
     return (
         <>
             <div className="container-cardtasks">
@@ -26,7 +27,12 @@ export default function CardTasks() {
 
                 <div className="list-cardtasks">
                     <GoPlusCircle />
-                    <p>Click here to add a task</p>
+                    <input className="input-tasks" id="input-tasks" onClick={inputActive} type="text" placeholder={"Click here to add a task"} />
+                    <button className="btn-addTask hidden" onClick={addTask} >Add</button>
+                </div>
+
+                <div className="tasks-cardtasks">
+                    <Tasks />
                 </div>
 
             </div>

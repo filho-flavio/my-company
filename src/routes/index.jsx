@@ -35,7 +35,7 @@ export const RoutesApp = () => {
             <Route path="/calendar" element={<Calendar />} />
             {/* Private Route */}
             <Route exact path="/home" element={<PrivateRoute Item={Home} />} />
-            <Route path="*" element={<Navigate to="/signin" />} />
+            <Route path="*" element={"/"} />
           </Routes>
         </Fragment>
       </Router>
