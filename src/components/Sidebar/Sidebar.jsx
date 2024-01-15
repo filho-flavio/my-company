@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 import { IoClose, IoExitOutline, IoMenu, IoPodium, IoPeopleSharp, IoCalendarOutline, IoAnalytics, IoHome } from "react-icons/io5";
 import "./Sidebar.css"
