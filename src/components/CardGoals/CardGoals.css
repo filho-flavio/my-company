@@ -1,0 +1,43 @@
+.container-goals {
+    min-width: 20em;
+    width: 49%;
+    height: 90%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5em;
+    background-color: #e4e9f7;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.header-goals {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 15%;
+    width: 90%;
+}
+
+.header-goals h1 {
+    font-size: 1.3em;
+
+}
+
+.add-goals .btnAdd-goal {
+    width: 1.3em;
+    height: 1.3rem;
+}
+.add-goals {
+    color: #999a9c;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+    .container-goals {
+        width: 95%;
+        min-width: 18em;
+    }
+}

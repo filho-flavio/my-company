@@ -9,7 +9,7 @@
 .main-home {
     display: flex;
     flex-flow: column wrap;
-    width: 80%;
+    width: 90%;
     max-height: 100%;
     margin: 0 auto;
     gap: 5%;

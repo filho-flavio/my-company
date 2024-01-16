@@ -1,3 +1,44 @@
 .container-task {
-    max-width: 100%;
+    width: 90%;
+    height: 13%;
+    border-radius: 0.8em;
+    background-color: #6487e7;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+.container-task:nth-child(even){
+    background-color: #e3e3e3;
+}
+
+.content-task {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3em;
+}
+
+.text-task {
+    width: 85%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow: hidden;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 12%;
+    height: 90%;
+    cursor: pointer;
+}
+
+.btn-task {
+    width: 1.3em;
+    height: 1.3em;
+}
+

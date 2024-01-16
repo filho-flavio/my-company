@@ -3,9 +3,9 @@ import { useAuth } from "../../hooks/useAuth";
 import "./index.css";
 import { Input } from "../../components/Input/Input";
 import { Button } from "../../components/Button/Button";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-export default function Signup () {
+export default function Signup() {
     const [email, setEmail] = useState("");
     const [emailConf, setEmailConf] = useState("");
     const [password, setPassword] = useState("");

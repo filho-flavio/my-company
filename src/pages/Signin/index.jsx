@@ -5,7 +5,7 @@ import { Button } from "../../components/Button/Button";
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from "../../hooks/useAuth";
 
-export const Signin = () => {
+const Signin = () => {
   const { signin } = useAuth();
   const navigate = useNavigate();
 
@@ -72,3 +72,5 @@ export const Signin = () => {
     </>
   );
 };
+
+export default Signin;

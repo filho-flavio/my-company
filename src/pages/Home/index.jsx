@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./index.css"
 import { OpenSidebar, Sidebar } from "../../components/Sidebar/Sidebar";
 import CardTasks from "../../components/CardTasks/CardTasks";
-import {v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
+import { CardGoals } from "../../components/CardGoals/CardGoals";
 
 export const Home = () => {
     const [tasks, setTasks] = useState([]);
@@ -35,13 +36,23 @@ export const Home = () => {
 
         let task = {
             id: uuidv4(),
-            text: textInput
+            text: textInput,
+            status: false
         }
 
         setTasks(prevState => [...prevState, task]);
+        localStorage.setItem("tasks_db", JSON.stringify(tasks));
         text.value = "";
+    }
 
-        console.log(tasks)
+    const deleteTask = (taskId) => {
+        let updatedTasks = [];
+
+        if (window.confirm("Are you sure to delete this task: ")) {
+            return updatedTasks = tasks.filter((task) => task.id !== taskId);
+        }
+
+        localStorage.setItem("tasks_db", JSON.stringify(updatedTasks))
     }
 
     const inputActive = () => {
@@ -62,8 +73,8 @@ export const Home = () => {
 
                 <div className="main-home line">
                     <div className="content-home-manage">
-                        <CardTasks addTask={addTask} inputActive={inputActive} />
-                        <CardTasks />
+                        <CardTasks addTask={addTask} inputActive={inputActive} deleteTask={deleteTask} />
+                        <CardGoals />
                     </div>
 
                     <div className="content-home-departments">

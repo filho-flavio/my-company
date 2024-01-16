@@ -5,7 +5,27 @@ import { GoPlusCircle } from "react-icons/go";
 import profileImage from "../../../public/profile.png";
 import { Tasks } from "../Tasks/Tasks";
 
-export default function CardTasks({ addTask, inputActive }) {
+const tasks = JSON.parse(localStorage.getItem("tasks_db"));
+export default function CardTasks({ addTask, inputActive, deleteTask }) {
+
+    // const inputBlur = () => {
+    //     const btnAddTask = document.querySelector("#btn-addTask");
+    //     const input = document.querySelector("#input-tasks");
+    //     input.addEventListener("blur", () => {
+    //         btnAddTask.classList.add("hidden");
+    //     });
+    // }
+
+    // inputBlur();
+
+    const linkClicked = () => {
+        const li = document.querySelectorAll(".status-tasks");
+        li.forEach(item => {
+            item.addEventListener("click", item.classList.toggle("active"))
+        })
+    }
+
+
     return (
         <>
             <div className="container-cardtasks">
@@ -18,9 +38,9 @@ export default function CardTasks({ addTask, inputActive }) {
                             <MdOutlineLock />
                         </div>
                         <ul className="links-cardtasks">
-                            <li>Upcoming</li>
-                            <li>Overdue</li>
-                            <li>Completed</li>
+                            <li className="status-tasks" onClick={linkClicked}>Upcoming</li>
+                            <li className="status-tasks">Overdue</li>
+                            <li className="status-tasks">Completed</li>
                         </ul>
                     </div>
                 </div>
@@ -28,11 +48,17 @@ export default function CardTasks({ addTask, inputActive }) {
                 <div className="list-cardtasks">
                     <GoPlusCircle />
                     <input className="input-tasks" id="input-tasks" onClick={inputActive} type="text" placeholder={"Click here to add a task"} />
-                    <button className="btn-addTask hidden" onClick={addTask} >Add</button>
+                    <button id="btn-addTask" className="btn-addTask hidden" onClick={addTask} >Add</button>
                 </div>
 
                 <div className="tasks-cardtasks">
-                    <Tasks />
+                    {tasks.map((item) =>
+                        <Tasks
+                            key={item.id}
+                            text={item.text}
+                            deleteTask={deleteTask}
+                        />
+                    )}
                 </div>
 
             </div>

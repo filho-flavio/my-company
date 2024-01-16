@@ -3,10 +3,9 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Navigate,
 } from "react-router-dom";
 import { Home } from "../pages/Home";
-import { Signin } from "../pages/Signin";
+import Signin from "../pages/Signin";
 import Signup from "../pages/Signup";
 import Departments from "../pages/Departments";
 import Statistics from "../pages/Statistics/Statistics";
@@ -27,7 +26,7 @@ export const RoutesApp = () => {
         <Fragment>
           <Routes>
             {/* Public Routes */}
-            <Route path="/" element={Signin} />
+            <Route path="/" element={<Signin />} />
             <Route exact path="/signup" element={<Signup />} />
             <Route path="/departments" element={<Departments />} />
             <Route path="/users" element={<Users />} />
