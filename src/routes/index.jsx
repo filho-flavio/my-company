@@ -12,6 +12,7 @@ import Statistics from "../pages/Statistics/Statistics";
 import Calendar from "../pages/Calendar/Calendar";
 import { Users } from "../pages/Users"
 import { useAuth } from "../hooks/useAuth";
+import { Sidebar } from "../components/Sidebar/Sidebar";
 
 const PrivateRoute = ({ Item }) => {
   const { signed } = useAuth();
