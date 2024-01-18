@@ -1,4 +1,5 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
+import "./routes.css"
 import {
   BrowserRouter as Router,
   Route,
@@ -12,7 +13,7 @@ import Statistics from "../pages/Statistics/Statistics";
 import Calendar from "../pages/Calendar/Calendar";
 import { Users } from "../pages/Users"
 import { useAuth } from "../hooks/useAuth";
-import { Sidebar } from "../components/Sidebar/Sidebar";
+import { OpenSidebar, Sidebar } from "../components/Sidebar/Sidebar";
 
 const PrivateRoute = ({ Item }) => {
   const { signed } = useAuth();
@@ -21,10 +22,25 @@ const PrivateRoute = ({ Item }) => {
 };
 
 export const RoutesApp = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSideba = () => {
+    setIsOpen(!isOpen);
+  }
+
   return (
     <>
       <Router>
         <Fragment>
+          {isOpen ? (
+            <div className="content-home-sidebar">
+              <Sidebar closeSidebar={toggleSideba} />
+            </div>
+          ) : (
+            <div className="content-home-menu">
+              <OpenSidebar openSidebar={toggleSideba} />
+            </div>
+          )}
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<Signin />} />

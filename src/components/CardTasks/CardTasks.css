@@ -43,7 +43,7 @@
     align-items: center;
 }
 
-.links-cardtasks {
+/* .links-cardtasks {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
@@ -62,7 +62,7 @@
     transition: all 0.6s ease;
     font-size: 0.9em;
     border-bottom: 2px solid #000000;
-}
+} */
 
 .list-cardtasks {
     display: flex;
