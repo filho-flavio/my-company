@@ -1,7 +1,7 @@
 import React from "react";
-import "./Department.css"
+import "./CardDepartments.css"
 
-export default function Department() {
+export default function CardDepartments() {
     return (
         <>
             <h1>Department</h1>

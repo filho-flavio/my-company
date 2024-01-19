@@ -43,27 +43,6 @@
     align-items: center;
 }
 
-/* .links-cardtasks {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    color: #787373;
-    gap: 2%;
-}
-
-.status-tasks {
-    cursor: pointer;
-    width: 25%;
-    height: 1.2em;
-    text-align: center;
-}
-
-.active {
-    transition: all 0.6s ease;
-    font-size: 0.9em;
-    border-bottom: 2px solid #000000;
-} */
-
 .list-cardtasks {
     display: flex;
     justify-content: left;
@@ -99,7 +78,7 @@
     color: #514f4f;
     cursor: pointer;
     font-weight: 600;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .btn-addTask:active {

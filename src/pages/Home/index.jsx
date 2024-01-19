@@ -2,6 +2,7 @@ import React from "react";
 import "./index.css";
 import CardTasks from "../../components/CardTasks/CardTasks";
 import { CardGoals } from "../../components/CardGoals/CardGoals";
+import CardDepartments from "../../components/CardDepartments/CardDepartments";
 
 export const Home = () => {
     return (
@@ -14,7 +15,7 @@ export const Home = () => {
                     </div>
 
                     <div className="content-home-departments">
-
+                    <CardDepartments />
                     </div>
                 </div>
             </div>

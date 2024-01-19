@@ -4,61 +4,35 @@
     height: 100vh;
     width: 100%;
     display: flex;
-    margin: auto;
+    justify-content: center;
 }
 
 .main-home {
     display: flex;
-    flex-flow: column wrap;
-    width: 90%;
-    max-height: 100%;
-    margin: 0 auto;
-    gap: 5%;
+    flex-wrap: wrap;
     justify-content: center;
-}
-
-.header-home {
-    display: flex;
-    height: 10%;
-    width: 100%;
-    margin-top: 2em;
-    outline: 1px solid #000;
-}
-
-.title-pages {
-    font-family: 'Courier New', Courier, monospace;
+    width: 90%;
 }
 
 .content-home-manage {
     width: 100%;
     height: 55%;
     display: flex;
-    justify-content: space-between;
-    align-items: end;
+    justify-content: space-evenly;
+    align-items: flex-end;
     flex-wrap: wrap;
 }
 
 .content-home-departments {
-    width: 100%;
-    height: 35%;
+    width: 98.5%;
+    height: 40%;
     background-color: #e4e9f7;
     border-radius: 0.8em;
-    display: flex;
 }
-
-/* .hidden {
-    display: none;
-}
-
-.content-home-menu {
-    width: 3em;
-    height: 3em;
-} */
 
 @media screen and (max-width: 800px) {
     .content-home-manage {
         gap: 4%;
         padding: 1em;
     }
-
 }

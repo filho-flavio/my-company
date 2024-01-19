@@ -8,6 +8,7 @@ import { v4 as uuidv4 } from 'uuid'
 
 export default function CardTasks() {
     const [tasks, setTasks] = useState([]);
+    const [inputIsClicked, setInputIsClicked] = useState(false);
 
     useEffect(() => {
         let tasksRecupered = JSON.parse(localStorage.getItem("tasks_db"));
@@ -46,24 +47,8 @@ export default function CardTasks() {
     }
 
     const inputActive = () => {
-        document.querySelector(".btn-addTask").classList.remove("hidden")
-    }
-
-    // const inputBlur = () => {
-    //     const btnAddTask = document.querySelector("#btn-addTask");
-    //     const input = document.querySelector("#input-tasks");
-    //     input.addEventListener("blur", () => {
-    //         btnAddTask.classList.add("hidden");
-    //     });
-    // }
-
-    // inputBlur();
-
-    const linkClicked = () => {
-        const li = document.querySelectorAll(".status-tasks");
-        li.forEach(item => {
-            item.addEventListener("click", item.classList.toggle("active"))
-        })
+        // document.querySelector(".btn-addTask").classList.remove("hidden")
+        setInputIsClicked(!inputIsClicked);
     }
 
     return (
@@ -86,9 +71,13 @@ export default function CardTasks() {
                 </div>
 
                 <div className="list-cardtasks">
-                    <GoPlusCircle />
+                    <GoPlusCircle className="pointer" />
                     <input className="input-tasks" id="input-tasks" onClick={inputActive} type="text" placeholder={"Click here to add a task"} />
-                    <button id="btn-addTask" className="btn-addTask hidden" onClick={addTask} >Add</button>
+                    {inputIsClicked ? (
+                            <button id="btn-addTask" className="btn-addTask" onClick={addTask} >Add</button>
+                        ) : (
+                            <div></div>
+                        )}
                 </div>
 
                 <div className="tasks-cardtasks">

@@ -3,7 +3,7 @@ import "./routes.css"
 import {
   BrowserRouter as Router,
   Route,
-  Routes,
+  Routes
 } from "react-router-dom";
 import { Home } from "../pages/Home";
 import Signin from "../pages/Signin";
@@ -11,7 +11,7 @@ import Signup from "../pages/Signup";
 import Departments from "../pages/Departments";
 import Statistics from "../pages/Statistics/Statistics";
 import Calendar from "../pages/Calendar/Calendar";
-import { Users } from "../pages/Users"
+import { Users } from "../pages/Users";
 import { useAuth } from "../hooks/useAuth";
 import { OpenSidebar, Sidebar } from "../components/Sidebar/Sidebar";
 
@@ -33,13 +33,9 @@ export const RoutesApp = () => {
       <Router>
         <Fragment>
           {isOpen ? (
-            <div className="content-home-sidebar">
-              <Sidebar closeSidebar={toggleSideba} />
-            </div>
+            <Sidebar closeSidebar={toggleSideba} />
           ) : (
-            <div className="content-home-menu">
-              <OpenSidebar openSidebar={toggleSideba} />
-            </div>
+            <OpenSidebar openSidebar={toggleSideba} />
           )}
           <Routes>
             {/* Public Routes */}
