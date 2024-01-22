@@ -11,7 +11,7 @@ export const Goal = () => {
                         <b>Marketing</b>
                     </div>
                     <div className="range-goal">
-
+                        
                     </div>
                 </div>
             </div>
