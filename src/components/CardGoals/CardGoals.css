@@ -1,7 +1,9 @@
 .container-goals {
     min-width: 20em;
+    min-height: 10em;
     width: 49%;
-    height: 90%;
+    height: 55%;
+    min-height: 20em;
     padding: 1em;
     display: flex;
     flex-direction: column;
@@ -93,7 +95,8 @@ span {
 @media screen and (max-width: 800px) {
     .container-goals {
         width: 95%;
-        min-width: 18em;
+        min-width: 10%;
+        height: 30%;
     }
 }
 

@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
-import { IoClose, IoExitOutline, IoMenu, IoPodium, IoPeopleSharp, IoCalendarOutline, IoAnalytics, IoHome } from "react-icons/io5";
+import { IoClose, IoExitOutline, IoMenu, IoPodium, IoPeopleSharp, IoCalendarOutline, IoAlbumsOutline, IoHome } from "react-icons/io5";
 import "./Sidebar.css"
 
-export const OpenSidebar = ({openSidebar}) => {
+export const OpenSidebar = ({ openSidebar }) => {
     return (
         <>
             <div className="menu-sidebar">
@@ -14,7 +14,7 @@ export const OpenSidebar = ({openSidebar}) => {
     )
 }
 
-export const Sidebar = ({closeSidebar}) => {
+export const Sidebar = ({ closeSidebar }) => {
     const { signout } = useAuth();
 
     return (
@@ -34,16 +34,16 @@ export const Sidebar = ({closeSidebar}) => {
                                 <Link className="links-sidebar" to={'/home'}>Home</Link>
                             </li>
                             <li className="item-sidebar">
+                                <IoAlbumsOutline />
+                                <Link className="links-sidebar" to={'/statistics'}>Orders</Link>
+                            </li>
+                            <li className="item-sidebar">
                                 <IoPodium />
                                 <Link className="links-sidebar" to={'/departments'}>Departments</Link>
                             </li>
                             <li className="item-sidebar">
                                 <IoPeopleSharp />
                                 <Link className="links-sidebar" to={'/users'}>Users</Link>
-                            </li>
-                            <li className="item-sidebar">
-                                <IoAnalytics />
-                                <Link className="links-sidebar" to={'/statistics'}>Statistics</Link>
                             </li>
                             <li className="item-sidebar">
                                 <IoCalendarOutline />

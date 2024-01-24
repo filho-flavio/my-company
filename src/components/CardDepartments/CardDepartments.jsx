@@ -6,7 +6,7 @@ export default function CardDepartments() {
 
     return (
         <>
-            <div className="container-card-departments line">
+            <div className="container-card-departments">
                 <div className="content-card-departments">
                     
                 </div>

@@ -5,18 +5,14 @@ import { CardGoals } from "../../components/CardGoals/CardGoals";
 import CardDepartments from "../../components/CardDepartments/CardDepartments";
 
 export const Home = () => {
+
     return (
         <>
             <div className="container-home">
-                <div className="main-home line">
-                    <div className="content-home-manage">
-                        <CardTasks />
-                        <CardGoals />
-                    </div>
-
-                    <div className="content-home-departments">
+                <div className="content-home">
+                    <CardTasks />
+                    <CardGoals />
                     <CardDepartments />
-                    </div>
                 </div>
             </div>
         </>

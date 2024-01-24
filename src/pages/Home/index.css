@@ -7,32 +7,24 @@
     justify-content: center;
 }
 
-.main-home {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.content-home {
     width: 90%;
-}
-
-.content-home-manage {
-    width: 100%;
-    height: 55%;
+    height: 100%;
     display: flex;
     justify-content: space-evenly;
-    align-items: flex-end;
     flex-wrap: wrap;
-}
-
-.content-home-departments {
-    width: 98.5%;
-    height: 40%;
-    background-color: #e4e9f7;
-    border-radius: 0.8em;
+    align-items: center;
+    padding: 1em;
+    gap: 2%;
 }
 
 @media screen and (max-width: 800px) {
-    .content-home-manage {
-        gap: 4%;
-        padding: 1em;
+    .container-home {
+        height: 190vh;
+        overflow-y: hidden;
+    }
+
+    .content-home {
+        margin-top: 1em;
     }
 }

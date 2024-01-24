@@ -1,9 +1,12 @@
-import React, { Fragment, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./routes.css"
 import {
   BrowserRouter as Router,
   Route,
-  Routes
+  Routes,
+  Navigate,
+  useNavigate,
+  Outlet
 } from "react-router-dom";
 import { Home } from "../pages/Home";
 import Signin from "../pages/Signin";
@@ -18,39 +21,47 @@ import { OpenSidebar, Sidebar } from "../components/Sidebar/Sidebar";
 const PrivateRoute = ({ Item }) => {
   const { signed } = useAuth();
 
-  return signed ? <Item /> : <Signin />;
+  return signed ? <Item /> : <Navigate to="/signin" />;
 };
 
-export const RoutesApp = () => {
+const RoutesApp = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleSideba = () => {
+  const toggleSidebar = () => {
     setIsOpen(!isOpen);
-  }
+  };
+
+  useEffect(() => {
+
+  }, [])
 
   return (
     <>
       <Router>
-        <Fragment>
-          {isOpen ? (
-            <Sidebar closeSidebar={toggleSideba} />
-          ) : (
-            <OpenSidebar openSidebar={toggleSideba} />
-          )}
-          <Routes>
-            {/* Public Routes */}
-            <Route path="/" element={<Signin />} />
-            <Route exact path="/signup" element={<Signup />} />
-            <Route path="/departments" element={<Departments />} />
-            <Route path="/users" element={<Users />} />
-            <Route path="/statistics" element={<Statistics />} />
-            <Route path="/calendar" element={<Calendar />} />
-            {/* Private Route */}
-            <Route exact path="/home" element={<PrivateRoute Item={Home} />} />
-            <Route path="*" element={"/"} />
-          </Routes>
-        </Fragment>
+        {isOpen ? (
+          <Sidebar closeSidebar={toggleSidebar} />
+        ) : (
+          <OpenSidebar openSidebar={toggleSidebar} />
+        )}
+        <Routes>
+          {/* Public Routes */}
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
+          {/* Private Routes */}
+          <Route path="/departments" element={<Departments />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/statistics" element={<Statistics />} />
+          <Route path="/calendar" element={<Calendar />} />
+          <Route
+            path="/home"
+            element={<PrivateRoute Item={Home} />}
+          />
+          {/* Redirect any unknown route to the home page */}
+          <Route path="*" element={<Navigate to="/home" />} />
+        </Routes>
       </Router>
     </>
   );
 };
+
+export default RoutesApp;

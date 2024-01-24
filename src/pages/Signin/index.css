@@ -23,8 +23,9 @@
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    min-width: 23%;
-    height: 45%;
+    min-width: 20em;
+    height: 42%;
+    min-height: 18em;
 }
 
 .box-1{
@@ -73,7 +74,13 @@
     color: #b1e4de;
 }
 
+label {
+    height: 2em;
+}
+
 .box-4 {
     width: 90%;
-    height: 12%;
+    height: 22%;
+    display: flex;
+    flex-direction: column;
 }
