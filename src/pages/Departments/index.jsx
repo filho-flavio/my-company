@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./index.css";
 import Department from "../../components/Departments/Departments";
 import marketingBg from "../../../public/marketing-bg.png";
@@ -7,35 +8,64 @@ import itDep from "../../../public/it-dep.jpg";
 import { GoPlusCircle } from "react-icons/go";
 
 export default function Departments() {
-    // document.addEventListener('mousemove', (e) => {
-    //     const cursor = document.querySelector('.circle');
-    //     cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    // });
 
-    const [isOpen, setIsOpen] = useState(false);
+    const arrDepartments = [
+        {
+            id: 1,
+            name: 'Marketing',
+            linkEmployees: "marketing"
+        },
+        {
+            id: 2,
+            name: "TI Department",
+            linkEmployees: "ti"
+        },
+        {
+            id: 3,
+            name: "Accouting",
+            linkEmployees: "accounting"
+        },
+        {
+            id: 4,
+            name: "Comex",
+            linkEmployees: "comex"
+        },
+        {
+            id: 5,
+            name: "Board of Director",
+            linkEmployees: "bod"
+        },
+        {
+            id: 6,
+            name: "HR",
+            linkEmployees: "hr"
+        },
+        {
+            id: 7,
+            name: "Financial",
+            linkEmployees: "financial"
+        }
+    ]
 
-    const handleDepartments = () => {
-        setIsOpen(!isOpen);
-        document.querySelector(".btn-addDepartment").classList.add("hidden");
+    // localStorage.setItem("departments_db",  JSON.stringify(arrDepartments));
+
+    function seeEmployees(department) {
+
     }
 
     return (
-        <>
-            <div className="container-departments">
-                <div className="departments line">
-                    <div className="header line">
-                        <h1 className="title">Department Management</h1>
-                    </div>
-                    <div className="departments-list line">
-                        <Department imgSrc={marketingBg} />
-                        <Department imgSrc={bod} />
-                        <Department imgSrc={itDep} />
-                        <Department imgSrc={marketingBg} />
-                        <Department imgSrc={bod} />
-                        <Department imgSrc={itDep} />
-                    </div>
-                </div>
+        <div className="container-departments">
+
+            <div className="header-departments">
+                <h1 className="title">Department Management</h1>
             </div>
-        </>
+
+            <div className="departments-list">
+                {arrDepartments.map((item) => (
+                    <Department key={item.id} titleDepartment={item.name} linkEmployees={item.linkEmployees} seeEmployees={seeEmployees} />
+                ))}
+            </div>
+
+        </div>
     )
 }

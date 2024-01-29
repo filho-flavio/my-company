@@ -1,11 +1,13 @@
 .c-department {
     display: flex;
     flex-direction: column;
-    height: 20em;
-    width: 15em;
+    gap: 2rem;
+    height: 22rem;
+    min-width: 16em;
+    width: 20rem;
     border-radius: 0.8em;
-    background-color: #E4E9F7;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #1b1b1b;
+    box-shadow: rgba(55, 55, 60, 0.2) 0px 7px 29px 0px;
 }
 
 .img-header {
@@ -13,8 +15,18 @@
     height: 100%;
     border-radius: 0.8em;
 }
-.c-header-department {
-    height: 30%;
+
+.c-title-department {
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+    border-top-right-radius: 0.8rem;
+    border-top-left-radius: 0.8rem;
+    color: #b1bddc;
+    font-family: 'Roboto', sans-serif;
 }
 
 .c-btns-department {
@@ -22,22 +34,25 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 70%;
     width: 100%;
     font-size: 14px;
+    gap: 1.5em;
+    background-color: #E4E9F7;
+    height: 70%;
+    border-radius: 0.8rem;
 }
 
 .btns-department {
     width: 90%;
-    height: 15%;
+    height: 2.8rem;
     border-radius: 0.8em;
     border: none;
     background-color: #C1CCE7;
-    color: #fff;
-    font-family: 'Roboto';
-    font-weight: 500;
-    font-size: 1em;
-    letter-spacing: 0.10em;
+    color: #171717;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.4px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 

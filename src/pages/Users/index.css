@@ -1,0 +1,25 @@
+.container-employees {
+    background-color: #615f5f;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+.header-employees {
+    margin-top: 2rem;
+    width: 90%;
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-employees {
+    width: 100%;
+    height: 1.2em;
+    font-size: 3rem;
+    text-align: center;
+
+}

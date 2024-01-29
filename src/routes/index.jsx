@@ -17,6 +17,7 @@ import Calendar from "../pages/Calendar/Calendar";
 import { Users } from "../pages/Users";
 import { useAuth } from "../hooks/useAuth";
 import { OpenSidebar, Sidebar } from "../components/Sidebar/Sidebar";
+import Employees from "../pages/Employees/Employees";
 
 const PrivateRoute = ({ Item }) => {
   const { signed } = useAuth();
@@ -52,6 +53,7 @@ const RoutesApp = () => {
           <Route path="/users" element={<Users />} />
           <Route path="/statistics" element={<Statistics />} />
           <Route path="/calendar" element={<Calendar />} />
+          <Route path="/departments/employees" element={<Employees />} />
           <Route
             path="/home"
             element={<PrivateRoute Item={Home} />}

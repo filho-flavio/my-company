@@ -34,13 +34,12 @@ export const CardGoals = () => {
                         <div className="selects-goal">
                             <select name="" className="select departments-goal bg-white">
                                 <option value="">Select your department</option>
-                                <option value="">opt</option>
 
-                                {/* {
+                                {
                                     departments.map((item) => {
                                         return (<option value="">{item.name}</option>)
                                     })
-                                } */}
+                                }
                             </select>
 
                             <select name="" className="select status-goal bg-white">

@@ -43,7 +43,7 @@ export const Sidebar = ({ closeSidebar }) => {
                             </li>
                             <li className="item-sidebar">
                                 <IoPeopleSharp />
-                                <Link className="links-sidebar" to={'/users'}>Users</Link>
+                                <Link className="links-sidebar" to={'/users'}>Employees</Link>
                             </li>
                             <li className="item-sidebar">
                                 <IoCalendarOutline />
